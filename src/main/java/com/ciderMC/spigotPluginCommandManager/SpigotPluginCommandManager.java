@@ -6,7 +6,8 @@ public final class SpigotPluginCommandManager extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        Objects.requireNonNull(getCommand("customcommands")).setExecutor(new CommandManager());
+        Objects.requireNonNull(getCommand("examplecommand")).setExecutor(new CommandManager());
 
     }
 

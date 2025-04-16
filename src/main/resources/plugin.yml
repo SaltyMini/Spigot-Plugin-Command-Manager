@@ -1,0 +1,11 @@
+name: Spigot Plugin Command Manager
+version: '1.0-SNAPSHOT'
+main: com.ciderMC.spigotPluginCommandManager.SpigotPluginCommandManager
+author: Salty
+api-version: '1.21'
+
+commands:
+  ExmapleCommand:
+    description: Example Command
+    usage: "/customcommands examplecommand [args]"
+    aliases: [example, ec, excmd]

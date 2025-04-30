@@ -74,7 +74,6 @@ public class CommandManager implements CommandExecutor {
                     commandSender.sendMessage("Command aliases: " + Arrays.toString(cmd.getAliases()));
                 }
 
-                commandSender.sendMessage("Command found: " + cmd.getName());
                 cmd.commandRun(commandSender, args);
                 return true;
             }
@@ -98,11 +97,10 @@ public class CommandManager implements CommandExecutor {
 
             int count = countMax - 10;
 
-            for(CommandStruct cmd : getCommandStruct()) {
-                while (count < countMax) {
-                    commandSender.sendMessage("/" + cmd.getSyntax() + " - " + cmd.getDescription());
-                    count++;
-                }
+            commandSender.sendMessage("=== Command Help (Page " + args[1] + ") ===");
+            for (int i = count; i < countMax; i++) {
+                CommandStruct cmd = getCommandStruct().get(i);
+                commandSender.sendMessage("/" + cmd.getSyntax() + " - " + cmd.getDescription());
             }
         }
     }

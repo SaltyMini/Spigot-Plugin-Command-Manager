@@ -8,6 +8,8 @@ How to setup:
 
 - Coppy the ExampleCommand class to subcommands
 
+- Add command lable to main
+  Objects.requireNonNull(getCommand("comamndLable")).setExecutor(new CommandManager());
 
 
 Commands can be easily created using the example command as a template
@@ -26,3 +28,7 @@ To create new commands:
 - Add the command to plugin YML
 
 - Add the command to CommandManager method in CommandManager class
+
+- If you are using the module to use commands as /commanName <args> rather than /<name> <commandName> <args> you need to register your commands in onEnable using
+  Objects.requireNonNull(getCommand("examplecommand")).setExecutor(new CommandManager());
+
